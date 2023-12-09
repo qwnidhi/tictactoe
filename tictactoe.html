@@ -1,0 +1,333 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="tictactoe.css">
+    </head>
+    <body>
+       
+        <div id="game"> 
+        <div class="header">
+            <h1>Welcome to Tic Tac Toe</h1>
+        </div>
+
+        <div class="P1" >
+            PLAYER 1:<hr>
+            Total Win <span id="k1">0</span>
+        </div>
+       
+        <div class="tictac">
+        <input type="button" class="button"  id="b1" onclick="show1()">
+        <input type="button" class="button"  id="b2" onclick="show2()">
+        <input type="button" class="button"  id="b3" onclick="show3()"><br>
+        <input type="button" class="button"  id="b4" onclick="show4()">
+        <input type="button" class="button"  id="b5" onclick="show5()">
+        <input type="button" class="button"  id="b6" onclick="show6()"><br>
+        <input type="button" class="button"  id="b7" onclick="show7()">
+        <input type="button" class="button"  id="b8" onclick="show8()">
+        <input type="button" class="button"  id="b9" onclick="show9()">
+        </div>
+    </input>
+
+    <div class="p2">
+        PLAYER 2:<hr>
+        Total Win <span id="k2">0</span>
+    </div>
+
+</div>
+
+        <script>
+            var t=1,c1=0,c2=0;
+            function restart()
+            {
+                document.getElementById("k1").innerHTML=c1;
+                document.getElementById("k2").innerHTML=c2;
+
+                document.getElementById("b1").value="";
+                document.getElementById("b2").value="";
+                document.getElementById("b3").value="";
+                document.getElementById("b4").value="";
+                document.getElementById("b5").value="";
+                document.getElementById("b6").value="";
+                document.getElementById("b7").value="";
+                document.getElementById("b8").value="";
+                document.getElementById("b9").value="";
+                t = 1;
+            }
+
+ 
+
+            function winner()
+            {
+                    //code
+
+                    var a1 = document.getElementById("b1").value;
+                    var a2 = document.getElementById("b2").value;
+                    var a3 = document.getElementById("b3").value;
+                    var a4 = document.getElementById("b4").value;
+                    var a5 = document.getElementById("b5").value;
+                    var a6 = document.getElementById("b6").value;
+                    var a7 = document.getElementById("b7").value;
+                    var a8 = document.getElementById("b8").value;
+                    var a9 = document.getElementById("b9").value;
+
+                    if(a1.length !=0 && a2.length !=0 && a3.length !=0){
+                        if(a1==a2 && a2==a3){
+                            if(a1=="x"){
+                                alert("player 1 is winner")
+                                c1++;
+                            }
+                            if(a1=="0"){
+                                alert("player 2 is winner")
+                                c2++;
+                            }
+                            restart();
+                        }
+                    }
+
+                    if(a4.length !=0 && a5.length !=0 && a6.length !=0){
+                        if(a4==a5 && a5==a6){
+                            if(a4=="x"){
+                                alert("player 1 is winner")
+                                c1++;
+                            }
+                            if(a4=="0"){
+                                alert("player 2 is winner")
+                                c2++;
+                            }
+                            
+                            restart();
+                        }
+                    }
+
+                    if(a7.length !=0 && a8.length !=0 && a9.length !=0){
+                        if(a7==a8 && a8==a9){
+                            if(a7=="x"){
+                                alert("player 1 is winner")
+                                c1++;
+                            }
+                            if(a7=="0"){
+                                alert("player 2 is winner")
+                                c2++;
+                            }
+                            restart();
+                        }
+                    }
+
+                    if(a1.length !=0 && a4.length !=0 && a7.length !=0){
+                        if(a1==a4 && a4==a7){
+                            if(a1=="x"){
+                                alert("player 1 is winner")
+                                c1++;
+                            }
+                            if(a1=="0"){
+                                c2++;
+                            }
+                            restart();
+                        }
+                    }
+
+                    if(a2.length !=0 && a5.length !=0 && a8.length !=0){
+                        if(a2==a5 && a5==a8){
+                            if(a1=="x"){
+                                alert("player 1 is winner")
+                                c1++;
+                            }
+                            if(a1=="0"){
+                                alert("player 2 is winner")
+                                c2++;
+                            }
+                            restart();
+                        }
+                    }
+
+                    if(a3.length !=0 && a6.length !=0 && a9.length !=0){
+                        if(a3==a6 && a6==a9){
+                            if(a3=="x"){
+                                alert("player 1 is winner")
+                                c1++;
+                            }
+                            if(a3=="0"){
+                                alert("player 2 is winner")
+                                c2++;
+                            }
+                            restart();
+                        }
+                    }
+
+                    if(a1.length !=0 && a5.length !=0 && a9.length !=0){
+                        if(a1==a5 && a5==a9){
+                            if(a1=="x"){
+                                alert("player 1 is winner")
+                                c1++;
+                            }
+                            if(a1=="0"){
+                                alert("player 2 is winner")
+                                c2++;
+                            }
+                            restart();
+                        }
+                    }
+
+                    if(a3.length !=0 && a5.length !=0 && a7.length !=0){
+                        if(a3==a5 && a5==a7){
+                            if(a3=="x"){
+                                alert("player 1 is winner")
+                                c1++;
+                            }
+                            if(a3=="0"){
+                                alert("player 2 is winner")
+                                c2++;
+                            }
+                            restart();
+                        }
+                    }
+
+                    if(t==10)
+                    {
+                        alert("draw")
+                        restart();
+                    }
+
+
+            }
+            function show1(){
+                if( document.getElementById("b1").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b1").value ="x";
+                }else{
+                    document.getElementById("b1").value ="0";
+                }
+                t++;winner();
+                }
+            }
+
+            function show2(){
+                if( document.getElementById("b2").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b2").value ="x";
+                }else{
+                    document.getElementById("b2").value ="0";
+                }
+                t++;winner();
+                }
+            }
+
+
+            function show3(){
+                if( document.getElementById("b3").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b3").value ="x";
+                }else{
+                    document.getElementById("b3").value ="0";
+                }
+                t++;
+                winner();
+                }
+            }
+
+            function show4(){
+                if( document.getElementById("b4").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b4").value ="x";
+                }else{
+                    document.getElementById("b4").value ="0";
+                }
+                t++;
+                winner();
+                }
+            }
+
+            function show5(){
+                if( document.getElementById("b5").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b5").value ="x";
+                }else{
+                    document.getElementById("b5").value ="0";
+                }
+                t++;
+                winner();
+                }
+            }
+
+            function show6(){
+                if( document.getElementById("b6").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b6").value ="x";
+                }else{
+                    document.getElementById("b6").value ="0";
+                }
+                t++;
+                winner();
+                }
+            }
+
+            function show7(){
+                if( document.getElementById("b7").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b7").value ="x";
+                }else{
+                    document.getElementById("b7").value ="0";
+                }
+                t++;
+                winner();
+                }
+            }
+
+            function show8(){
+                if( document.getElementById("b8").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b8").value ="x";
+                }else{
+                    document.getElementById("b8").value ="0";
+                }
+                t++;
+                winner();
+                }
+            }
+
+            function show9(){
+                if( document.getElementById("b9").value.length==0)
+                {
+                if(t%2 == 1)
+                {
+                    document.getElementById("b9").value ="x";
+                }else{
+                    document.getElementById("b9").value ="0";
+                }
+                t++;
+                winner();
+                }
+            }
+
+          
+            function start(){
+                document.getElementById("game").style.visibility="visible";
+                document.getElementById("bx").style.visibility="hidden";
+            }
+
+
+            document.getElementById("game").style.visibility="hidden";
+            
+                
+        </script>
+
+</div>
+<button type="button" value="START GAME" id="bx"onclick="start()">START GAME</button>
+        
+    </body>
+</html>
